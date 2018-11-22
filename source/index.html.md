@@ -1,14 +1,12 @@
 ---
-title: API Reference
+title: Documentação da API da Mainô
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='mailto:neilson@maino.com.br'>Solicite uma integração</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -17,52 +15,22 @@ includes:
 search: true
 ---
 
-# Introduction
+# Introdução
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+A API da Mainô é usada para integração com os sistemas Traxo e Comex NF-e. A API usa o padrão REST e toda a comunicação é feita em JSON.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Autenticação
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+A autenticação é feita usando OAuth 2.0.
 
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+A API espera que todas as chamadas contenham os cabeçalhos:
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
+Authorization: Bearer AUTH_TOKEN
+CNPJ: CNPJ_DA_EMPRESA
 ```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+  Substitua <code>AUTH_TOKEN</code> pelo seu token de autenticação e o <code>CNPJ_DA_EMPRESA</code> pelo CNPJ da empresa.
 </aside>
 
 # Kittens
